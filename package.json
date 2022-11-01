@@ -1,0 +1,24 @@
+{
+  "name": "jinq",
+  "version": "1.0.0",
+  "description": "A selection of typescript methods for iterables based on LINQ.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jinq",
+    "iterable",
+    "linq",
+    "utility"
+  ],
+  "author": "Mike Dean",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.42.0",
+    "@typescript-eslint/parser": "5.42.0",
+    "eslint": "8.26.0",
+    "prettier": "2.7.1",
+    "typescript": "4.8.4"
+  }
+}
