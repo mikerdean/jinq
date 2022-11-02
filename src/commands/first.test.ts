@@ -41,7 +41,7 @@ test("should return the first value of a date iterable which conforms to the tes
   ava.is(result.toISOString(), "2001-06-23T00:00:00.000Z");
 });
 
-test("should return a count of an object iterable of values which conform to the test", (ava) => {
+test("should return a the first value of an object iterable of values which conform to the test", (ava) => {
   const obj1 = { test: "value1" };
   const obj2 = { test: "value2" };
   const obj3 = { test: "value3" };
