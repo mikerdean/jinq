@@ -1,5 +1,14 @@
 import { JinqItemTest } from "../types";
 
+export class SingleValueError<T> extends Error {
+  readonly items: T[];
+
+  constructor(message: string, items: T[]) {
+    super(message);
+    this.items = items;
+  }
+}
+
 const single = <T>(iterable: Iterable<T>, test: JinqItemTest<T>): T => {
   const items: T[] = [];
 
@@ -14,8 +23,9 @@ const single = <T>(iterable: Iterable<T>, test: JinqItemTest<T>): T => {
   }
 
   if (items.length > 1) {
-    throw Error(
-      "more than one item was found in this iterable matching your test"
+    throw new SingleValueError<T>(
+      "more than one item was found in this iterable matching your test",
+      items
     );
   }
 
