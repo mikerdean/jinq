@@ -10,11 +10,11 @@ import {
   toMap,
   toSet,
 } from "./commands";
-import { WhereIterable } from "./iterables";
+import { ReverseIterable, WhereIterable } from "./iterables";
 import { JinqItemTest, JinqKeyMap } from "./types";
 
 class JinqIterable<T> implements Iterable<T> {
-  protected readonly iterable: Iterable<T>;
+  private iterable: Iterable<T>;
 
   constructor(iterable: Iterable<T>) {
     this.iterable = iterable;
@@ -40,6 +40,11 @@ class JinqIterable<T> implements Iterable<T> {
     return firstOrDefault(this.iterable, test, defaultValue);
   }
 
+  reverse(): JinqIterable<T> {
+    this.iterable = new ReverseIterable(this.iterable);
+    return this;
+  }
+
   single(test: JinqItemTest<T>): T {
     return single(this.iterable, test);
   }
@@ -61,7 +66,8 @@ class JinqIterable<T> implements Iterable<T> {
   }
 
   where(test: JinqItemTest<T>): JinqIterable<T> {
-    return new WhereIterable(this.iterable, test);
+    this.iterable = new WhereIterable(this.iterable, test);
+    return this;
   }
 
   *[Symbol.iterator]() {

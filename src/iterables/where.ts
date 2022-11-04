@@ -1,11 +1,11 @@
-import JinqIterable from "../jinqIterable";
 import { JinqItemTest } from "../types";
 
-export default class WhereIterable<T> extends JinqIterable<T> {
+export default class WhereIterable<T> implements Iterable<T> {
+  private readonly iterable: Iterable<T>;
   private readonly test: JinqItemTest<T>;
 
   constructor(iterable: Iterable<T>, test: JinqItemTest<T>) {
-    super(iterable);
+    this.iterable = iterable;
     this.test = test;
   }
 
