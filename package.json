@@ -4,7 +4,7 @@
   "description": "A selection of typescript methods for iterables based on LINQ.",
   "main": "src/index.ts",
   "scripts": {
-    "test": "ava"
+    "test": "time ava"
   },
   "keywords": [
     "jinq",
