@@ -1,7 +1,10 @@
-import all from "./all";
-import any from "./any";
-import count from "./count";
-import toArray from "./toArray";
-import toMap from "./toMap";
-
-export { all, any, count, toArray, toMap };
+export { default as all } from "./all";
+export { default as any } from "./any";
+export { default as count } from "./count";
+export { default as first } from "./first";
+export { default as firstOrDefault } from "./firstOrDefault";
+export { default as single } from "./single";
+export { default as singleOrDefault } from "./singleOrDefault";
+export { default as toArray } from "./toArray";
+export { default as toMap } from "./toMap";
+export { default as toSet } from "./toSet";
