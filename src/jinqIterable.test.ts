@@ -63,6 +63,29 @@ test("should filter using select twice", (ava) => {
   ava.deepEqual(result, [true, true, false, true, false]);
 });
 
+test("should filter using selectMany", (ava) => {
+  const input = [
+    { id: 1, title: "Blog Post #1", tags: ["test", "flag", "nightmare"] },
+    { id: 2, title: "Blog Post #2", tags: ["fire", "dog", "walking"] },
+    { id: 3, title: "Blog Post #3", tags: ["derp", "engine", "cat"] },
+  ];
+
+  const query = new JinqIterable(input).selectMany((x) => x.tags);
+
+  const result = [...query];
+  ava.deepEqual(result, [
+    "test",
+    "flag",
+    "nightmare",
+    "fire",
+    "dog",
+    "walking",
+    "derp",
+    "engine",
+    "cat",
+  ]);
+});
+
 test("should filter using skip", (ava) => {
   const query = new JinqIterable([1, 2, 3, 4, 5]).skip(3);
 
