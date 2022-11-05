@@ -12,11 +12,12 @@ import {
 } from "./commands";
 import {
   ReverseIterable,
+  SelectIterable,
   SkipIterable,
   TakeIterable,
   WhereIterable,
 } from "./iterables";
-import { JinqItemTest, JinqKeyMap } from "./types";
+import { JinqItemSelect, JinqItemTest, JinqKeyMap } from "./types";
 
 class JinqIterable<T> implements Iterable<T> {
   private iterable: Iterable<T>;
@@ -48,6 +49,10 @@ class JinqIterable<T> implements Iterable<T> {
   reverse(): JinqIterable<T> {
     this.iterable = new ReverseIterable(this.iterable);
     return this;
+  }
+
+  select<U>(select: JinqItemSelect<T, U>): JinqIterable<U> {
+    return new JinqIterable(new SelectIterable(this.iterable, select));
   }
 
   single(test: JinqItemTest<T>): T {

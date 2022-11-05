@@ -31,6 +31,38 @@ test("should filter using reverse twice", (ava) => {
   ava.deepEqual(result, [1, 2, 3, 4, 5]);
 });
 
+test("should filter using select", (ava) => {
+  const input = [
+    { value: 1, text: "Value #1" },
+    { value: 2, text: "Value #2" },
+    { value: 3, text: "Value #3" },
+    { value: 4, text: "Value #4" },
+    { value: 5, text: "Value #5" },
+  ];
+
+  const query = new JinqIterable(input).select((x) => x.value);
+
+  const result = [...query];
+  ava.deepEqual(result, [1, 2, 3, 4, 5]);
+});
+
+test("should filter using select twice", (ava) => {
+  const input = [
+    { value: 1, text: "Value #1", active: true },
+    { value: 2, text: "Value #2", active: true },
+    { value: 3, text: "Value #3", active: false },
+    { value: 4, text: "Value #4", active: true },
+    { value: 5, text: "Value #5", active: false },
+  ];
+
+  const query = new JinqIterable(input)
+    .select(({ value, active }) => ({ value, active }))
+    .select((x) => x.active);
+
+  const result = [...query];
+  ava.deepEqual(result, [true, true, false, true, false]);
+});
+
 test("should filter using skip", (ava) => {
   const query = new JinqIterable([1, 2, 3, 4, 5]).skip(3);
 
@@ -81,4 +113,22 @@ test("should filter using a combination of iterators (where, skip and take)", (a
 
   const result = [...query];
   ava.deepEqual(result, [5]);
+});
+
+test("should filter using a combination of iterators (where, skip and select)", (ava) => {
+  const input = [
+    { value: 1, text: "Value #1", active: true },
+    { value: 2, text: "Value #2", active: true },
+    { value: 3, text: "Value #3", active: false },
+    { value: 4, text: "Value #4", active: true },
+    { value: 5, text: "Value #5", active: false },
+  ];
+
+  const query = new JinqIterable(input)
+    .where((x) => x.active)
+    .skip(1)
+    .select((x) => x.value);
+
+  const result = [...query];
+  ava.deepEqual(result, [2, 4]);
 });
