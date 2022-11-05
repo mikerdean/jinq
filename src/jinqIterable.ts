@@ -10,7 +10,12 @@ import {
   toMap,
   toSet,
 } from "./commands";
-import { ReverseIterable, WhereIterable } from "./iterables";
+import {
+  ReverseIterable,
+  SkipIterable,
+  TakeIterable,
+  WhereIterable,
+} from "./iterables";
 import { JinqItemTest, JinqKeyMap } from "./types";
 
 class JinqIterable<T> implements Iterable<T> {
@@ -51,6 +56,16 @@ class JinqIterable<T> implements Iterable<T> {
 
   singleOrDefault(test: JinqItemTest<T>, defaultValue: T): T {
     return singleOrDefault(this.iterable, test, defaultValue);
+  }
+
+  skip(num: number): JinqIterable<T> {
+    this.iterable = new SkipIterable(this.iterable, num);
+    return this;
+  }
+
+  take(num: number): JinqIterable<T> {
+    this.iterable = new TakeIterable(this.iterable, num);
+    return this;
   }
 
   toArray(): T[] {

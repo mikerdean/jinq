@@ -25,7 +25,6 @@
     "typescript": "4.8.4"
   },
   "ava": {
-    "concurrency": 32,
     "extensions": [
       "ts"
     ],
