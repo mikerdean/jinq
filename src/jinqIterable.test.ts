@@ -1,6 +1,18 @@
 import test from "ava";
 import JinqIterable from "./jinqIterable";
 
+test("should find an element using contains", (ava) => {
+  const query = new JinqIterable([1, 2, 3, 4, 5]);
+  const result = query.contains(4);
+  ava.is(result, true);
+});
+
+test("should not find an element using contains", (ava) => {
+  const query = new JinqIterable([1, 2, 3, 4, 5]);
+  const result = query.contains(6);
+  ava.is(result, false);
+});
+
 test("should filter using where", (ava) => {
   const query = new JinqIterable([1, 2, 3, 4, 5]).where((n) => n > 2);
 

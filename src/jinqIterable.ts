@@ -40,6 +40,10 @@ class JinqIterable<T> implements Iterable<T> {
     return any(this.iterable, test);
   }
 
+  contains(item: T): boolean {
+    return any(this.iterable, (value) => Object.is(value, item));
+  }
+
   count(test: JinqItemTest<T>): number {
     return count(this.iterable, test);
   }
