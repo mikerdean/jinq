@@ -11,6 +11,7 @@ import {
   toSet,
 } from "./commands";
 import {
+  GroupByIterable,
   ReverseIterable,
   SelectIterable,
   SelectManyIterable,
@@ -54,6 +55,10 @@ class JinqIterable<T> implements Iterable<T> {
 
   firstOrDefault(test: JinqItemTest<T>, defaultValue: T): T {
     return firstOrDefault(this.iterable, test, defaultValue);
+  }
+
+  groupBy<TKey>(key: JinqKeyMap<TKey, T>) {
+    return new GroupByIterable<TKey, T>(this.iterable, key);
   }
 
   reverse(): JinqIterable<T> {

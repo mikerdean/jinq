@@ -1,3 +1,4 @@
+export { default as GroupByIterable } from "./groupBy";
 export { default as ReverseIterable } from "./reverse";
 export { default as SelectIterable } from "./select";
 export { default as SelectManyIterable } from "./selectMany";

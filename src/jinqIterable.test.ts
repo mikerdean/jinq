@@ -119,11 +119,34 @@ test("should filter using take", (ava) => {
   ava.deepEqual(result, [1, 2, 3]);
 });
 
-test("should filter using skip take", (ava) => {
+test("should filter using take twice", (ava) => {
   const query = new JinqIterable([1, 2, 3, 4, 5]).take(3).take(1);
 
   const result = [...query];
   ava.deepEqual(result, [1]);
+});
+
+test("should filter using group by", (ava) => {
+  const people = [
+    { forenames: "Roger", surname: "Williams" },
+    { forenames: "Yvonne", surname: "Ashcroft" },
+    { forenames: "David", surname: "Ashcroft" },
+    { forenames: "Gordon", surname: "Freeman" },
+    { forenames: "Christopher", surname: "Ashcroft" },
+    { forenames: "Sunny", surname: "Williams" },
+    { forenames: "Mork", surname: "Doon" },
+    { forenames: "Valerie", surname: "Freeman" },
+  ];
+
+  const query = new JinqIterable(people).groupBy((x) => x.surname);
+
+  const result = [...query];
+  ava.deepEqual(result, [
+    { key: "Williams", values: [people[0], people[5]] },
+    { key: "Ashcroft", values: [people[1], people[2], people[4]] },
+    { key: "Freeman", values: [people[3], people[7]] },
+    { key: "Doon", values: [people[6]] },
+  ]);
 });
 
 test("should filter using a combination of iterators (where and reverse)", (ava) => {
