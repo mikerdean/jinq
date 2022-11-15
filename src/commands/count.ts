@@ -1,9 +1,9 @@
 import { JinqItemTest } from "../types";
 
-const count = <T>(iterable: Iterable<T>, test: JinqItemTest<T>): number => {
+const count = <T>(iterable: Iterable<T>, test?: JinqItemTest<T>): number => {
   let count = 0;
   for (const item of iterable) {
-    if (test(item)) {
+    if (test === undefined || test(item)) {
       count += 1;
     }
   }

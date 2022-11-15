@@ -6,6 +6,16 @@ test("should return a count of 0 (zero) for an empty iterable", (ava) => {
   ava.is(result, 0);
 });
 
+test("should return a count of all elements without a specific test", (ava) => {
+  const result = count([1, 2, 3, 4, 5, 6, 7, 8]);
+  ava.is(result, 8);
+});
+
+test("should return a count of all elements with an undefined test", (ava) => {
+  const result = count([1, 2, 3, 4, 5], undefined);
+  ava.is(result, 5);
+});
+
 test("should return a count of a number iterable of values which conform to the test", (ava) => {
   const result = count([1, 2, 3], (num) => num < 3);
   ava.is(result, 2);
