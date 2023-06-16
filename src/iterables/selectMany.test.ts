@@ -1,24 +1,28 @@
-import test from "ava";
+import { describe, it } from "mocha";
+import should from "should";
 import SelectManyIterable from "./selectMany";
 
-const actors = [
+const setup = () => [
   { id: 1, title: "Alien", tags: ["horror", "sci-fi", "alien"] },
   { id: 2, title: "Blade Runner", tags: ["cyberpunk", "android"] },
   { id: 3, title: "Predator", tags: ["action", "arnold", "jungle"] },
 ];
 
-test("should correctly select from an iterable", (ava) => {
-  const query = new SelectManyIterable(actors, (actor) => actor.tags);
-  const result = [...query];
+describe("iterables > selectMany", () => {
+  it("should correctly select from an iterable", () => {
+    const movies = setup();
+    const query = new SelectManyIterable(movies, (movie) => movie.tags);
+    const result = [...query];
 
-  ava.deepEqual(result, [
-    "horror",
-    "sci-fi",
-    "alien",
-    "cyberpunk",
-    "android",
-    "action",
-    "arnold",
-    "jungle",
-  ]);
+    should.deepEqual(result, [
+      "horror",
+      "sci-fi",
+      "alien",
+      "cyberpunk",
+      "android",
+      "action",
+      "arnold",
+      "jungle",
+    ]);
+  });
 });

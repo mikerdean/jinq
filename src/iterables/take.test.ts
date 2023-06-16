@@ -1,21 +1,22 @@
-import test from "ava";
+import { describe, it } from "mocha";
+import should from "should";
 import TakeIterable from "./take";
 
-test("should correctly take an iterable", (ava) => {
-  const query = new TakeIterable([1, 2, 3, 4, 5], 3);
-  const result = [...query];
+describe("iterables > take", () => {
+  it("should correctly take an iterable", () => {
+    const query = new TakeIterable([1, 2, 3, 4, 5], 3);
+    const result = [...query];
+    should.deepEqual(result, [1, 2, 3]);
+  });
 
-  ava.deepEqual(result, [1, 2, 3]);
-});
+  it("should correctly take an iterable when actioned twice", () => {
+    const query = new TakeIterable([1, 2, 3, 4, 5], 3);
+    const query2 = new TakeIterable(query, 1);
 
-test("should correctly take an iterable when actioned twice", (ava) => {
-  const query = new TakeIterable([1, 2, 3, 4, 5], 3);
-  const query2 = new TakeIterable(query, 1);
+    const result = [...query];
+    const result2 = [...query2];
 
-  const result = [...query];
-  const result2 = [...query2];
-
-  ava.not(query, query2);
-  ava.deepEqual(result, [1, 2, 3]);
-  ava.deepEqual(result2, [1]);
+    should.deepEqual(result, [1, 2, 3]);
+    should.deepEqual(result2, [1]);
+  });
 });

@@ -1,21 +1,22 @@
-import test from "ava";
+import { describe, it } from "mocha";
+import should from "should";
 import SkipIterable from "./skip";
 
-test("should correctly skip an iterable", (ava) => {
-  const query = new SkipIterable([1, 2, 3, 4, 5], 3);
-  const result = [...query];
+describe("iterables > skip", () => {
+  it("should correctly skip an iterable", () => {
+    const query = new SkipIterable([1, 2, 3, 4, 5], 3);
+    const result = [...query];
+    should.deepEqual(result, [4, 5]);
+  });
 
-  ava.deepEqual(result, [4, 5]);
-});
+  it("should correctly skip an iterable when actioned twice", () => {
+    const query = new SkipIterable([1, 2, 3, 4, 5], 3);
+    const query2 = new SkipIterable(query, 1);
 
-test("should correctly skip an iterable when actioned twice", (ava) => {
-  const query = new SkipIterable([1, 2, 3, 4, 5], 3);
-  const query2 = new SkipIterable(query, 1);
+    const result = [...query];
+    const result2 = [...query2];
 
-  const result = [...query];
-  const result2 = [...query2];
-
-  ava.not(query, query2);
-  ava.deepEqual(result, [4, 5]);
-  ava.deepEqual(result2, [5]);
+    should.deepEqual(result, [4, 5]);
+    should.deepEqual(result2, [5]);
+  });
 });
