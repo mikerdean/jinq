@@ -1,4 +1,4 @@
-import { JinqKeyMap } from "../types";
+import type { JinqKeyMap } from "../types";
 
 const toMap = <TKey, TValue>(
   iterable: Iterable<TValue>,

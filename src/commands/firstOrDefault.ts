@@ -1,4 +1,4 @@
-import { JinqItemTest } from "../types";
+import type { JinqItemTest } from "../types";
 import first from "./first";
 
 const firstOrDefault = <T>(

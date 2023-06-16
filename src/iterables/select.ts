@@ -1,4 +1,4 @@
-import { JinqItemSelect } from "../types";
+import type { JinqItemSelect } from "../types";
 
 export default class SelectIterable<T, U> implements Iterable<U> {
   private readonly iterable: Iterable<T>;

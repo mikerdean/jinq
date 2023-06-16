@@ -1,4 +1,4 @@
-import { JinqItemTest } from "../types";
+import type { JinqItemTest } from "../types";
 import single, { SingleValueError } from "./single";
 
 const singleOrDefault = <T>(

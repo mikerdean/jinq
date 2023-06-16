@@ -19,7 +19,7 @@ import {
   TakeIterable,
   WhereIterable,
 } from "./iterables";
-import {
+import type {
   JinqItemSelect,
   JinqItemSelectMany,
   JinqItemTest,

@@ -1,4 +1,4 @@
-import { JinqItemTest } from "../types";
+import type { JinqItemTest } from "../types";
 
 const count = <T>(iterable: Iterable<T>, test?: JinqItemTest<T>): number => {
   let count = 0;

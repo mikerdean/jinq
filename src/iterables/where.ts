@@ -1,4 +1,4 @@
-import { JinqItemTest } from "../types";
+import type { JinqItemTest } from "../types";
 
 export default class WhereIterable<T> implements Iterable<T> {
   private readonly iterable: Iterable<T>;

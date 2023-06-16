@@ -1,4 +1,4 @@
-import { JinqItemTest } from "../types";
+import type { JinqItemTest } from "../types";
 
 const all = <T>(iterable: Iterable<T>, test: JinqItemTest<T>): boolean => {
   let iterated = false;
