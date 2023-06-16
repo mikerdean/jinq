@@ -9,7 +9,7 @@ const singleOrDefault = <T>(
   try {
     return single(iterable, test);
   } catch (e) {
-    if (e instanceof SingleValueError<T>) {
+    if (e instanceof SingleValueError) {
       throw e;
     }
 

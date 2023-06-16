@@ -4,7 +4,10 @@
   "description": "A selection of typescript methods for iterables based on LINQ.",
   "main": "src/index.ts",
   "scripts": {
-    "test": "time ava"
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --write",
+    "test": "time ava",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [
     "jinq",
