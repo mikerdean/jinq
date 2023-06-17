@@ -1,8 +1,6 @@
 # jinq
 
-`jinq` is a project inspired by much use of LINQ in C#. This is a **fun** project to attempt a reproduction of those interfaces in Javascript.
-
-Yes, I realise that Javascript arrays have a lot of these sorts of functions built in already.
+`jinq` is a project inspired by LINQ in C#. This is a **fun** project to attempt a reproduction of those interfaces in Javascript.
 
 ## Installation
 
