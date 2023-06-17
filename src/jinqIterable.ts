@@ -1,4 +1,5 @@
 import {
+  aggregate,
   all,
   any,
   count,
@@ -25,6 +26,7 @@ import {
   WhereIterable,
 } from "./iterables";
 import type {
+  JinqAccumulator,
   JinqItemSelect,
   JinqItemSelectMany,
   JinqItemTest,
@@ -36,6 +38,13 @@ class JinqIterable<T> implements Iterable<T> {
 
   constructor(iterable: Iterable<T>) {
     this.iterable = iterable;
+  }
+
+  aggregate<TAccumulate>(
+    seed: TAccumulate,
+    accumulator: JinqAccumulator<T, TAccumulate>
+  ): TAccumulate {
+    return aggregate(this.iterable, seed, accumulator);
   }
 
   all(test: JinqItemTest<T>): boolean {
