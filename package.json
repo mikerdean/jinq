@@ -18,6 +18,7 @@
   "author": "Mike Dean",
   "license": "ISC",
   "devDependencies": {
+    "@jaredmcateer/eslint-plugin-shouldjs": "1.1.0",
     "@typescript-eslint/eslint-plugin": "5.59.11",
     "@typescript-eslint/parser": "5.59.11",
     "@types/mocha": "10.0.1",

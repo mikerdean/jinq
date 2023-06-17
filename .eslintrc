@@ -13,7 +13,7 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "mocha"],
+  "plugins": ["@typescript-eslint", "mocha", "@jaredmcateer/shouldjs"],
   "rules": {
     "eqeqeq": "error",
     "prefer-const": "error",
@@ -22,6 +22,9 @@
     "mocha/no-pending-tests": "error",
     "mocha/no-return-from-async": "error",
     "mocha/no-top-level-hooks": "error",
-    "mocha/no-skipped-tests": "error"
+    "mocha/no-skipped-tests": "error",
+    "@jaredmcateer/shouldjs/should-var-name": "error",
+    "@jaredmcateer/shouldjs/no-property-assertions": "error",
+    "@jaredmcateer/shouldjs/expect-should-assertion": "error"
   }
 }
