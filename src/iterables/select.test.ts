@@ -2,7 +2,7 @@ import { describe, it } from "mocha";
 import should from "should";
 import SelectIterable from "./select";
 
-const setup = () => [
+const getActors = () => [
   { id: 1, forenames: "Arnold", surname: "Schwarzenegger" },
   { id: 2, forenames: "Sylvester", surname: "Stallone" },
   { id: 3, forenames: "Jason", surname: "Statham" },
@@ -10,7 +10,7 @@ const setup = () => [
 
 describe("iterables > select", () => {
   it("should correctly select from an iterable", () => {
-    const actors = setup();
+    const actors = getActors();
     const query = new SelectIterable(actors, (actor) => actor.id);
     const result = [...query];
 
@@ -18,7 +18,7 @@ describe("iterables > select", () => {
   });
 
   it("should correctly select from an iterable when actioned twice", () => {
-    const actors = setup();
+    const actors = getActors();
     const query = new SelectIterable(actors, ({ id, surname }) => ({
       id,
       surname,

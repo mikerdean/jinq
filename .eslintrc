@@ -3,15 +3,25 @@
   "env": {
     "es2021": true
   },
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:mocha/recommended"
+  ],
   "ignorePatterns": ["dist/*"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "mocha"],
   "rules": {
     "eqeqeq": "error",
-    "prefer-const": "error"
+    "prefer-const": "error",
+    "mocha/no-exclusive-tests": "error",
+    "mocha/no-hooks": "error",
+    "mocha/no-pending-tests": "error",
+    "mocha/no-return-from-async": "error",
+    "mocha/no-top-level-hooks": "error",
+    "mocha/no-skipped-tests": "error"
   }
 }
