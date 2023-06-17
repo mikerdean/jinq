@@ -4,6 +4,8 @@ import {
   count,
   first,
   firstOrDefault,
+  last,
+  lastOrDefault,
   single,
   singleOrDefault,
   toArray,
@@ -59,6 +61,14 @@ class JinqIterable<T> implements Iterable<T> {
 
   groupBy<TKey>(key: JinqKeyMap<TKey, T>) {
     return new GroupByIterable<TKey, T>(this.iterable, key);
+  }
+
+  last(test: JinqItemTest<T>): T {
+    return last(this.iterable, test);
+  }
+
+  lastOrDefault(test: JinqItemTest<T>, defaultValue: T): T {
+    return lastOrDefault(this.iterable, test, defaultValue);
   }
 
   reverse(): JinqIterable<T> {
