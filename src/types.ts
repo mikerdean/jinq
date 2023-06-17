@@ -7,3 +7,4 @@ export type JinqAccumulator<T, TAccumulate> = (
   accumulated: TAccumulate,
   current: T
 ) => TAccumulate;
+export type Direction = "asc" | "desc";

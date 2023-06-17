@@ -2,7 +2,7 @@ import { describe, it } from "mocha";
 import should from "should";
 import JinqIterable from "./jinqIterable";
 
-describe("jinq iterable", () => {
+describe("jinq class", () => {
   it("should find an element using contains", () => {
     const query = new JinqIterable([1, 2, 3, 4, 5]);
     const result = query.contains(4);

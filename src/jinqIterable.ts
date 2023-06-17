@@ -25,7 +25,9 @@ import {
   TakeIterable,
   WhereIterable,
 } from "./iterables";
+import OrderByIterable from "./iterables/orderBy";
 import type {
+  Direction,
   JinqAccumulator,
   JinqItemSelect,
   JinqItemSelectMany,
@@ -89,6 +91,11 @@ class JinqIterable<T> implements Iterable<T> {
 
   min(): T {
     return min(this.iterable);
+  }
+
+  orderBy<U>(select: JinqItemSelect<T, U>, direction: Direction = "asc") {
+    this.iterable = new OrderByIterable(this.iterable, select, direction);
+    return this;
   }
 
   repeat(times: number): JinqIterable<T> {
