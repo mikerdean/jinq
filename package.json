@@ -39,6 +39,14 @@
     "tsx": "3.12.7",
     "typescript": "5.1.3"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikerdean/jinq.git"
+  },
+  "homepage": "https://github.com/mikerdean/jinq",
+  "bugs": {
+    "url": "https://github.com/mikerdean/jinq/issues"
+  },
   "volta": {
     "node": "18.16.0"
   }
