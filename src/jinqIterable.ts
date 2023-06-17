@@ -29,6 +29,7 @@ import OrderByIterable from "./iterables/orderBy";
 import type {
   Direction,
   JinqAccumulator,
+  JinqGroupBy,
   JinqItemSelect,
   JinqItemSelectMany,
   JinqItemTest,
@@ -73,8 +74,10 @@ export class JinqIterable<T> implements Iterable<T> {
     return firstOrDefault(this.iterable, test, defaultValue);
   }
 
-  groupBy<TKey>(key: JinqKeyMap<TKey, T>) {
-    return new GroupByIterable<TKey, T>(this.iterable, key);
+  groupBy<TKey>(key: JinqKeyMap<TKey, T>): JinqIterable<JinqGroupBy<TKey, T>> {
+    return new JinqIterable<JinqGroupBy<TKey, T>>(
+      new GroupByIterable<TKey, T>(this.iterable, key)
+    );
   }
 
   last(test: JinqItemTest<T>): T {
