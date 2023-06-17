@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import JinqIterable from "./jinqIterable";
+import { JinqIterable } from "./jinqIterable";
 
 describe("jinq class", () => {
   it("should find an element using contains", () => {

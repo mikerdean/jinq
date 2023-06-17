@@ -1,3 +1,4 @@
 .vscode
 dist
+types
 node_modules

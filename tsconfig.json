@@ -5,5 +5,7 @@
     "isolatedModules": true,
     "strict": true,
     "target": "ES2021"
-  }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["**/*.test.ts"]
 }

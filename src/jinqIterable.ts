@@ -35,7 +35,7 @@ import type {
   JinqKeyMap,
 } from "./types";
 
-class JinqIterable<T> implements Iterable<T> {
+export class JinqIterable<T> implements Iterable<T> {
   private iterable: Iterable<T>;
 
   constructor(iterable: Iterable<T>) {
@@ -157,5 +157,3 @@ class JinqIterable<T> implements Iterable<T> {
     }
   }
 }
-
-export default JinqIterable;
