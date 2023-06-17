@@ -14,6 +14,7 @@ import {
 } from "./commands";
 import {
   GroupByIterable,
+  RepeatIterable,
   ReverseIterable,
   SelectIterable,
   SelectManyIterable,
@@ -69,6 +70,11 @@ class JinqIterable<T> implements Iterable<T> {
 
   lastOrDefault(test: JinqItemTest<T>, defaultValue: T): T {
     return lastOrDefault(this.iterable, test, defaultValue);
+  }
+
+  repeat(times: number): JinqIterable<T> {
+    this.iterable = new RepeatIterable(this.iterable, times);
+    return this;
   }
 
   reverse(): JinqIterable<T> {

@@ -15,6 +15,12 @@ describe("jinq iterable", () => {
     should(result).equal(false);
   });
 
+  it("should repeat elements using repeat", () => {
+    const query = new JinqIterable([1, 2, 3]).repeat(2);
+    const result = [...query];
+    should.deepEqual(result, [1, 2, 3, 1, 2, 3]);
+  });
+
   it("should filter using where", () => {
     const query = new JinqIterable([1, 2, 3, 4, 5]).where((n) => n > 2);
     const result = [...query];
@@ -192,5 +198,17 @@ describe("jinq iterable", () => {
 
     const result = [...query];
     should.deepEqual(result, [2, 4]);
+  });
+
+  it("should filter using a combination of iterators (repeat, where, take)", () => {
+    const input = [1, 2, 3, 4, 5];
+
+    const query = new JinqIterable(input)
+      .repeat(3)
+      .where((x) => x > 3)
+      .take(3);
+
+    const result = [...query];
+    should.deepEqual(result, [4, 5, 4]);
   });
 });
