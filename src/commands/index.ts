@@ -6,6 +6,7 @@ export { default as firstOrDefault } from "./firstOrDefault";
 export { default as last } from "./last";
 export { default as lastOrDefault } from "./lastOrDefault";
 export { default as max } from "./max";
+export { default as min } from "./min";
 export { default as single } from "./single";
 export { default as singleOrDefault } from "./singleOrDefault";
 export { default as toArray } from "./toArray";

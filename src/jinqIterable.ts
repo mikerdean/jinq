@@ -7,6 +7,7 @@ import {
   last,
   lastOrDefault,
   max,
+  min,
   single,
   singleOrDefault,
   toArray,
@@ -75,6 +76,10 @@ class JinqIterable<T> implements Iterable<T> {
 
   max(): T {
     return max(this.iterable);
+  }
+
+  min(): T {
+    return min(this.iterable);
   }
 
   repeat(times: number): JinqIterable<T> {
