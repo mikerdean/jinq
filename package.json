@@ -21,8 +21,8 @@
     "linq",
     "utility"
   ],
-  "author": "Mike Dean",
-  "license": "ISC",
+  "author": "mikerdean",
+  "license": "MIT",
   "devDependencies": {
     "@jaredmcateer/eslint-plugin-shouldjs": "1.1.0",
     "@rollup/plugin-typescript": "11.1.1",
