@@ -1,7 +1,7 @@
-import type { RollupOptions } from "rollup";
+import { defineConfig } from "rollup";
 import typescript from "@rollup/plugin-typescript";
 
-const config: RollupOptions = {
+const config = defineConfig({
   input: "./src/index.ts",
   output: [
     {
@@ -14,6 +14,6 @@ const config: RollupOptions = {
     },
   ],
   plugins: [typescript()],
-};
+});
 
 export default config;

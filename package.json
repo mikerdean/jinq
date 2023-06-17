@@ -9,7 +9,7 @@
     "build": "npm run build:clean && npm run build:rollup && npm run build:declaration",
     "build:clean": "rm -rf ./dist && rm -rf ./types",
     "build:declaration": "tsc --declaration --emitDeclarationOnly --declarationDir ./types",
-    "build:rollup": "rollup --config rollup.config.ts --configPlugin typescript",
+    "build:rollup": "rollup --config rollup.config.mjs",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --write",
     "test": "NODE_NO_WARNINGS=1 mocha",
