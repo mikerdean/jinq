@@ -3,7 +3,7 @@ import should from "should";
 import min from "./min";
 
 describe("commands > min", () => {
-  it("should return null for an iterable with no elements", () => {
+  it("should throw for an iterable with no elements", () => {
     should.throws(
       () => min([]),
       Error,

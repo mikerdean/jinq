@@ -3,7 +3,7 @@ import should from "should";
 import max from "./max";
 
 describe("commands > max", () => {
-  it("should return null for an iterable with no elements", () => {
+  it("should throw for an iterable with no elements", () => {
     should.throws(
       () => max([]),
       Error,
