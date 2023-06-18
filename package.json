@@ -4,14 +4,15 @@
   "description": "A selection of methods for iterables using LINQ as inspiration.",
   "main": "dist/jinq.js",
   "module": "dist/jinq.esm.js",
-  "types": "types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "npm run build:clean && npm run build:rollup && npm run build:declaration",
     "build:clean": "rm -rf ./dist && rm -rf ./types",
-    "build:declaration": "tsc --declaration --emitDeclarationOnly --declarationDir ./types",
+    "build:declaration": "tsc --declaration --emitDeclarationOnly --declarationDir ./dist/types",
     "build:rollup": "rollup --config rollup.config.mjs",
+    "format:prettier": "prettier --write .",
     "lint:eslint": "eslint .",
-    "lint:prettier": "prettier --write",
+    "lint:prettier": "prettier --check .",
     "test": "NODE_NO_WARNINGS=1 mocha",
     "typecheck": "tsc --noEmit"
   },
