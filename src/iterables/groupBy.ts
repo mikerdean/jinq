@@ -3,13 +3,10 @@ import type { JinqGroupBy, JinqKeyMap } from "../types";
 export default class GroupByIterable<TKey, TValue>
   implements Iterable<JinqGroupBy<TKey, TValue>>
 {
-  private readonly iterable: Iterable<TValue>;
-  private readonly mapper: JinqKeyMap<TKey, TValue>;
-
-  constructor(iterable: Iterable<TValue>, mapper: JinqKeyMap<TKey, TValue>) {
-    this.iterable = iterable;
-    this.mapper = mapper;
-  }
+  constructor(
+    private readonly iterable: Iterable<TValue>,
+    private readonly mapper: JinqKeyMap<TKey, TValue>
+  ) {}
 
   *[Symbol.iterator]() {
     const map = new Map<TKey, TValue[]>();

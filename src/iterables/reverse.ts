@@ -1,9 +1,5 @@
 export default class ReverseIterable<T> implements Iterable<T> {
-  private readonly iterable: Iterable<T>;
-
-  constructor(iterable: Iterable<T>) {
-    this.iterable = iterable;
-  }
+  constructor(private readonly iterable: Iterable<T>) {}
 
   *[Symbol.iterator]() {
     const arr = [...this.iterable];

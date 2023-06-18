@@ -1,11 +1,8 @@
 export default class SkipIterable<T> implements Iterable<T> {
-  private readonly iterable: Iterable<T>;
-  private readonly num: number;
-
-  constructor(iterable: Iterable<T>, num: number) {
-    this.iterable = iterable;
-    this.num = num;
-  }
+  constructor(
+    private readonly iterable: Iterable<T>,
+    private readonly num: number
+  ) {}
 
   *[Symbol.iterator]() {
     let count = 0;
