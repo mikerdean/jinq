@@ -2,9 +2,9 @@
   "name": "jinq",
   "version": "1.0.0",
   "description": "A selection of methods for iterables using LINQ as inspiration.",
-  "main": "dist/jinq.js",
-  "module": "dist/jinq.esm.js",
-  "types": "dist/types/index.d.ts",
+  "main": "./dist/jinq.js",
+  "module": "./dist/jinq.esm.js",
+  "types": "./dist/types/index.d.ts",
   "scripts": {
     "build": "npm run build:clean && npm run build:rollup && npm run build:declaration",
     "build:clean": "rm -rf ./dist && rm -rf ./types",
