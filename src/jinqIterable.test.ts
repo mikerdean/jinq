@@ -211,4 +211,22 @@ describe("jinq class", () => {
     const result = [...query];
     should.deepEqual(result, [4, 5, 4]);
   });
+
+  it("should filter by distinct values", () => {
+    const input = [1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5];
+
+    const query = new JinqIterable(input).distinct();
+
+    const result = [...query];
+    should(result).deepEqual([1, 2, 3, 4, 5]);
+  });
+
+  it("should filter by distinct values with multiple operators", () => {
+    const input = [1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5];
+
+    const query = new JinqIterable(input).distinct().where((x) => x > 3);
+
+    const result = [...query];
+    should(result).deepEqual([4, 5]);
+  });
 });

@@ -16,6 +16,7 @@ import {
   toSet,
 } from "./commands";
 import {
+  DistinctIterable,
   GroupByIterable,
   RepeatIterable,
   ReverseIterable,
@@ -64,6 +65,11 @@ export class JinqIterable<T> implements Iterable<T> {
 
   count(test?: JinqItemTest<T>): number {
     return count(this.iterable, test);
+  }
+
+  distinct(): JinqIterable<T> {
+    this.iterable = new DistinctIterable<T>(this.iterable);
+    return this;
   }
 
   first(test: JinqItemTest<T>): T {

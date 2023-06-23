@@ -1,3 +1,4 @@
+export { default as DistinctIterable } from "./distinct";
 export { default as GroupByIterable } from "./groupBy";
 export { default as RepeatIterable } from "./repeat";
 export { default as ReverseIterable } from "./reverse";
