@@ -17,6 +17,7 @@ import {
 } from "./commands";
 import {
   DistinctIterable,
+  ExceptIterable,
   GroupByIterable,
   IntersectIterable,
   RepeatIterable,
@@ -70,6 +71,11 @@ export class JinqIterable<T> implements Iterable<T> {
 
   distinct(): JinqIterable<T> {
     this.iterable = new DistinctIterable<T>(this.iterable);
+    return this;
+  }
+
+  except(compareTo: Iterable<T>): JinqIterable<T> {
+    this.iterable = new ExceptIterable(this.iterable, compareTo);
     return this;
   }
 

@@ -238,4 +238,13 @@ describe("jinq class", () => {
     const result = [...query];
     should(result).deepEqual([1, 2, 3]);
   });
+
+  it("should produce an exception of values", () => {
+    const input = [1, 2, 3, 4, 5];
+
+    const query = new JinqIterable(input).except([4, 5]);
+
+    const result = [...query];
+    should(result).deepEqual([1, 2, 3]);
+  });
 });

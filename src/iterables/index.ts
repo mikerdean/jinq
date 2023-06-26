@@ -1,4 +1,5 @@
 export { default as DistinctIterable } from "./distinct";
+export { default as ExceptIterable } from "./except";
 export { default as GroupByIterable } from "./groupBy";
 export { default as IntersectIterable } from "./intersect";
 export { default as RepeatIterable } from "./repeat";

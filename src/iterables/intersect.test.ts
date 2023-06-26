@@ -11,7 +11,7 @@ describe("iterables > intersect", () => {
 
   it("should get an intersection of strings", () => {
     const query = new IntersectIterable(
-      ["healthy", "bears", "are", "extremely rare"],
+      ["healthy", "bears", "are", "extremely", "rare"],
       ["healthy", "bears", "are", "super", "cool"]
     );
 
