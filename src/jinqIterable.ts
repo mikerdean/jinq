@@ -18,6 +18,7 @@ import {
 import {
   DistinctIterable,
   GroupByIterable,
+  IntersectIterable,
   RepeatIterable,
   ReverseIterable,
   SelectIterable,
@@ -78,6 +79,11 @@ export class JinqIterable<T> implements Iterable<T> {
 
   firstOrDefault(test: JinqItemTest<T>, defaultValue: T): T {
     return firstOrDefault(this.iterable, test, defaultValue);
+  }
+
+  intersect(compareTo: Iterable<T>): JinqIterable<T> {
+    this.iterable = new IntersectIterable(this.iterable, compareTo);
+    return this;
   }
 
   groupBy<TKey>(key: JinqKeyMap<TKey, T>): JinqIterable<JinqGroupBy<TKey, T>> {
