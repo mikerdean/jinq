@@ -7,7 +7,7 @@ describe("commands > min", () => {
     should.throws(
       () => min([]),
       Error,
-      "no values were found in this iterable"
+      "no values were found in this iterable",
     );
   });
 

@@ -32,7 +32,7 @@ describe("commands > firstOrDefault", () => {
     const result = firstOrDefault(
       ["hello", "world", "dork"],
       (str) => str.length < 5,
-      "something"
+      "something",
     );
 
     should(result).equal("dork");
@@ -42,7 +42,7 @@ describe("commands > firstOrDefault", () => {
     const result = firstOrDefault(
       ["hello", "world", "dork"],
       (str) => str.length > 6,
-      "a cool result"
+      "a cool result",
     );
 
     should(result).equal("a cool result");
@@ -56,7 +56,7 @@ describe("commands > firstOrDefault", () => {
         new Date(Date.UTC(2022, 9, 15)),
       ],
       (dt) => dt > new Date(Date.UTC(2000, 1, 1)),
-      new Date(Date.UTC(1900, 0, 1))
+      new Date(Date.UTC(1900, 0, 1)),
     );
 
     should(result.toISOString()).equal("2001-06-23T00:00:00.000Z");
@@ -70,7 +70,7 @@ describe("commands > firstOrDefault", () => {
         new Date(Date.UTC(2022, 9, 15)),
       ],
       (dt) => dt < new Date(Date.UTC(1990, 0, 1)),
-      new Date(Date.UTC(1900, 0, 1))
+      new Date(Date.UTC(1900, 0, 1)),
     );
 
     should(result.toISOString()).equal("1900-01-01T00:00:00.000Z");
@@ -85,7 +85,7 @@ describe("commands > firstOrDefault", () => {
     const result = firstOrDefault(
       [obj1, obj2, obj3],
       (obj) => obj.test === "value2",
-      obj4
+      obj4,
     );
 
     should(result).equal(obj2);
@@ -100,7 +100,7 @@ describe("commands > firstOrDefault", () => {
     const result = firstOrDefault(
       [obj1, obj2, obj3],
       (obj) => obj.test === "value0",
-      obj4
+      obj4,
     );
 
     should(result).equal(obj4);

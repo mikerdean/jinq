@@ -4,7 +4,7 @@ import last from "./last.js";
 const lastOrDefault = <T>(
   iterable: Iterable<T>,
   test: JinqItemTest<T>,
-  defaultValue: T
+  defaultValue: T,
 ): T => {
   try {
     return last(iterable, test);

@@ -48,7 +48,7 @@ export class JinqIterable<T> implements Iterable<T> {
 
   aggregate<TAccumulate>(
     seed: TAccumulate,
-    accumulator: JinqAccumulator<T, TAccumulate>
+    accumulator: JinqAccumulator<T, TAccumulate>,
   ): TAccumulate {
     return aggregate(this.iterable, seed, accumulator);
   }
@@ -94,7 +94,7 @@ export class JinqIterable<T> implements Iterable<T> {
 
   groupBy<TKey>(key: JinqKeyMap<TKey, T>): JinqIterable<JinqGroupBy<TKey, T>> {
     return new JinqIterable<JinqGroupBy<TKey, T>>(
-      new GroupByIterable<TKey, T>(this.iterable, key)
+      new GroupByIterable<TKey, T>(this.iterable, key),
     );
   }
 

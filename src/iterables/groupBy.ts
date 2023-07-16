@@ -5,7 +5,7 @@ export default class GroupByIterable<TKey, TValue>
 {
   constructor(
     private readonly iterable: Iterable<TValue>,
-    private readonly mapper: JinqKeyMap<TKey, TValue>
+    private readonly mapper: JinqKeyMap<TKey, TValue>,
   ) {}
 
   *[Symbol.iterator]() {

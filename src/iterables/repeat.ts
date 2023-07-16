@@ -1,7 +1,7 @@
 export default class RepeatIterable<T> implements Iterable<T> {
   constructor(
     private readonly iterable: Iterable<T>,
-    private readonly repeat: number
+    private readonly repeat: number,
   ) {}
 
   *[Symbol.iterator]() {

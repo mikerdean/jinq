@@ -31,7 +31,7 @@ describe("commands > count", () => {
   it("should return a count of a string iterable of values which conform to the test", () => {
     const result = count(
       ["hello", "world", "how", "are", "you"],
-      (str) => str.length < 5
+      (str) => str.length < 5,
     );
 
     should(result).equal(3);
@@ -44,7 +44,7 @@ describe("commands > count", () => {
         new Date(Date.UTC(2001, 5, 23)),
         new Date(Date.UTC(2022, 9, 15)),
       ],
-      (dt) => dt > new Date(Date.UTC(2000, 1, 1))
+      (dt) => dt > new Date(Date.UTC(2000, 1, 1)),
     );
 
     should(result).equal(2);
@@ -53,7 +53,7 @@ describe("commands > count", () => {
   it("should return a count of an object iterable of values which conform to the test", () => {
     const result = count(
       [{ test: "value1" }, { test: "value2" }, { test: "value3" }],
-      (obj) => obj.test !== "value1"
+      (obj) => obj.test !== "value1",
     );
 
     should(result).equal(2);

@@ -25,7 +25,7 @@ describe("iterables > orderBy", () => {
     const query = new OrderByIterable(
       [true, true, false, false, true],
       (x) => x,
-      "asc"
+      "asc",
     );
     const result = [...query];
     should(result).deepEqual([false, false, true, true, true]);
@@ -35,7 +35,7 @@ describe("iterables > orderBy", () => {
     const query = new OrderByIterable(
       [true, true, false, false, true],
       (x) => x,
-      "desc"
+      "desc",
     );
     const result = [...query];
     should(result).deepEqual([true, true, true, false, false]);
@@ -45,7 +45,7 @@ describe("iterables > orderBy", () => {
     const query = new OrderByIterable(
       ["three", "blind", "mice"],
       (x) => x,
-      "asc"
+      "asc",
     );
     const result = [...query];
     should(result).deepEqual(["blind", "mice", "three"]);
@@ -55,7 +55,7 @@ describe("iterables > orderBy", () => {
     const query = new OrderByIterable(
       ["you", "have", "been", "erased"],
       (x) => x,
-      "desc"
+      "desc",
     );
     const result = [...query];
     should(result).deepEqual(["you", "have", "erased", "been"]);
@@ -69,7 +69,7 @@ describe("iterables > orderBy", () => {
         new Date(Date.UTC(1992, 4, 2)),
       ],
       (dt) => dt,
-      "asc"
+      "asc",
     );
 
     const result = [...query].map((dt) => dt.toISOString());
@@ -88,7 +88,7 @@ describe("iterables > orderBy", () => {
         new Date(Date.UTC(1992, 4, 2)),
       ],
       (dt) => dt,
-      "desc"
+      "desc",
     );
 
     const result = [...query].map((dt) => dt.toISOString());
@@ -109,7 +109,7 @@ describe("iterables > orderBy", () => {
     const query = new OrderByIterable(
       [user1, user2, user3, user4, user5],
       (user) => user.surname,
-      "asc"
+      "asc",
     );
 
     const result = [...query];
@@ -126,7 +126,7 @@ describe("iterables > orderBy", () => {
     const query = new OrderByIterable(
       [user1, user2, user3, user4, user5],
       (user) => user.surname,
-      "desc"
+      "desc",
     );
 
     const result = [...query];

@@ -7,7 +7,7 @@ describe("commands > last", () => {
     should.throws(
       () => last([], () => true),
       Error,
-      "item could not be found in iterable"
+      "item could not be found in iterable",
     );
   });
 
@@ -15,7 +15,7 @@ describe("commands > last", () => {
     should.throws(
       () => last([true], () => false),
       Error,
-      "item could not be found in iterable"
+      "item could not be found in iterable",
     );
   });
 
@@ -32,7 +32,7 @@ describe("commands > last", () => {
   it("should return the last value of a string iterable which conforms to the test", () => {
     const result = last(
       ["hello", "world", "how", "are", "you"],
-      (str) => str.length < 5
+      (str) => str.length < 5,
     );
 
     should(result).equal("you");
@@ -45,7 +45,7 @@ describe("commands > last", () => {
         new Date(Date.UTC(2001, 5, 23)),
         new Date(Date.UTC(2022, 9, 15)),
       ],
-      (dt) => dt > new Date(Date.UTC(2000, 1, 1))
+      (dt) => dt > new Date(Date.UTC(2000, 1, 1)),
     );
 
     should(result.toISOString()).equal("2022-10-15T00:00:00.000Z");
@@ -59,7 +59,7 @@ describe("commands > last", () => {
 
     const result = last(
       [obj1, obj2, obj3, obj4],
-      (obj) => obj.test === "value2"
+      (obj) => obj.test === "value2",
     );
 
     should(result).equal(obj4);

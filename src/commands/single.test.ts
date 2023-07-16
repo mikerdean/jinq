@@ -7,7 +7,7 @@ describe("commands > single", () => {
     should.throws(
       () => single([], () => true),
       Error,
-      "item could not be found in iterable"
+      "item could not be found in iterable",
     );
   });
 
@@ -15,7 +15,7 @@ describe("commands > single", () => {
     should.throws(
       () => single([true], () => false),
       Error,
-      "item could not be found in iterable"
+      "item could not be found in iterable",
     );
   });
 
@@ -23,7 +23,7 @@ describe("commands > single", () => {
     should.throws(
       () => single([true, true], () => true),
       SingleValueError,
-      "more than one item was found in this iterable matching your test"
+      "more than one item was found in this iterable matching your test",
     );
   });
 
@@ -40,7 +40,7 @@ describe("commands > single", () => {
   it("should return a single value of a string iterable which conforms to the test", () => {
     const result = single(
       ["hello", "world", "how", "are", "you"],
-      (str) => str === "are"
+      (str) => str === "are",
     );
 
     should(result).equal("are");
@@ -53,7 +53,7 @@ describe("commands > single", () => {
         new Date(Date.UTC(2001, 5, 23)),
         new Date(Date.UTC(2022, 9, 15)),
       ],
-      (dt) => dt.toISOString() === "2022-10-15T00:00:00.000Z"
+      (dt) => dt.toISOString() === "2022-10-15T00:00:00.000Z",
     );
 
     should(result.toISOString()).equal("2022-10-15T00:00:00.000Z");

@@ -8,7 +8,7 @@ describe("commands > singleOrDefault", () => {
     should.throws(
       () => singleOrDefault([true, true], () => true, false),
       SingleValueError,
-      "more than one item was found in this iterable matching your test"
+      "more than one item was found in this iterable matching your test",
     );
   });
 
@@ -36,7 +36,7 @@ describe("commands > singleOrDefault", () => {
     const result = singleOrDefault(
       ["hello", "world", "how", "are", "you"],
       (str) => str === "are",
-      "doughnut"
+      "doughnut",
     );
 
     should(result).equal("are");
@@ -50,7 +50,7 @@ describe("commands > singleOrDefault", () => {
         new Date(Date.UTC(2022, 9, 15)),
       ],
       (dt) => dt.toISOString() === "2022-10-15T00:00:00.000Z",
-      new Date(Date.UTC(1900, 0, 1))
+      new Date(Date.UTC(1900, 0, 1)),
     );
 
     should(result.toISOString()).equal("2022-10-15T00:00:00.000Z");
@@ -65,7 +65,7 @@ describe("commands > singleOrDefault", () => {
     const result = singleOrDefault(
       [obj1, obj2, obj3],
       (obj) => obj.test === "value2",
-      obj4
+      obj4,
     );
 
     should(result).equal(obj2);

@@ -4,7 +4,7 @@ import single, { SingleValueError } from "./single.js";
 const singleOrDefault = <T>(
   iterable: Iterable<T>,
   test: JinqItemTest<T>,
-  defaultValue: T
+  defaultValue: T,
 ): T => {
   try {
     return single(iterable, test);

@@ -4,7 +4,7 @@ export default class OrderByIterable<T, U> implements Iterable<T> {
   constructor(
     private readonly iterable: Iterable<T>,
     private readonly select: JinqItemSelect<T, U>,
-    private readonly direction: Direction
+    private readonly direction: Direction,
   ) {}
 
   *[Symbol.iterator]() {

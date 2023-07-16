@@ -7,7 +7,7 @@ describe("commands > first", () => {
     should.throws(
       () => first([], () => true),
       Error,
-      "item could not be found in iterable"
+      "item could not be found in iterable",
     );
   });
 
@@ -15,7 +15,7 @@ describe("commands > first", () => {
     should.throws(
       () => first([true], () => false),
       Error,
-      "item could not be found in iterable"
+      "item could not be found in iterable",
     );
   });
 
@@ -32,7 +32,7 @@ describe("commands > first", () => {
   it("should return the first value of a string iterable which conforms to the test", () => {
     const result = first(
       ["hello", "world", "how", "are", "you"],
-      (str) => str.length < 5
+      (str) => str.length < 5,
     );
 
     should(result).equal("how");
@@ -45,7 +45,7 @@ describe("commands > first", () => {
         new Date(Date.UTC(2001, 5, 23)),
         new Date(Date.UTC(2022, 9, 15)),
       ],
-      (dt) => dt > new Date(Date.UTC(2000, 1, 1))
+      (dt) => dt > new Date(Date.UTC(2000, 1, 1)),
     );
 
     should(result.toISOString()).equal("2001-06-23T00:00:00.000Z");

@@ -7,7 +7,7 @@ describe("commands > max", () => {
     should.throws(
       () => max([]),
       Error,
-      "no values were found in this iterable"
+      "no values were found in this iterable",
     );
   });
 

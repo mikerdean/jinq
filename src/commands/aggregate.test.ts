@@ -12,7 +12,7 @@ describe("commands > aggregate", () => {
     const result = aggregate(
       [1, 5, 8, 2],
       15,
-      (prev, current) => prev + current
+      (prev, current) => prev + current,
     );
     should(result).equal(31);
   });
@@ -21,7 +21,7 @@ describe("commands > aggregate", () => {
     const result = aggregate(
       [1, 5, 8, 2],
       "",
-      (prev, current) => prev + current
+      (prev, current) => prev + current,
     );
 
     should(result).equal("1582");
@@ -31,7 +31,7 @@ describe("commands > aggregate", () => {
     const result = aggregate(
       ["what", "the", "hell", "is", "this?"],
       "",
-      (prev, current) => `${prev} ${current}`
+      (prev, current) => `${prev} ${current}`,
     );
     should(result).equal(" what the hell is this?");
   });
@@ -40,7 +40,7 @@ describe("commands > aggregate", () => {
     const result = aggregate(
       [{ key1: 1 }, { key2: 2 }, { key5: 3 }],
       {},
-      (prev, current) => ({ ...prev, ...current })
+      (prev, current) => ({ ...prev, ...current }),
     );
 
     should(result).deepEqual({

@@ -1,7 +1,7 @@
 export default class ExceptIterable<T> implements Iterable<T> {
   constructor(
     private readonly iterable: Iterable<T>,
-    private readonly iterable2: Iterable<T>
+    private readonly iterable2: Iterable<T>,
   ) {}
 
   *[Symbol.iterator]() {

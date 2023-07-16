@@ -15,7 +15,7 @@ describe("commands > toMap", () => {
         [103, 3],
         [104, 4],
         [105, 5],
-      ])
+      ]),
     );
   });
 
@@ -33,7 +33,7 @@ describe("commands > toMap", () => {
         ["abc123", { key: "abc123", value: 1 }],
         ["def567", { key: "def567", value: 2 }],
         ["ghi890", { key: "ghi890", value: 3 }],
-      ])
+      ]),
     );
   });
 });

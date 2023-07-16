@@ -21,7 +21,7 @@ describe("commands > all", () => {
   it("should identify a string iterable with all values conforming to the test", () => {
     const result = all(
       ["hello", "world", "how", "are", "you"],
-      (str) => str.length <= 5
+      (str) => str.length <= 5,
     );
 
     should(result).equal(true);
@@ -34,7 +34,7 @@ describe("commands > all", () => {
         new Date(Date.UTC(2001, 5, 23)),
         new Date(Date.UTC(2022, 9, 15)),
       ],
-      (dt) => dt > new Date(Date.UTC(1990, 1, 1))
+      (dt) => dt > new Date(Date.UTC(1990, 1, 1)),
     );
 
     should(result).equal(true);
@@ -43,7 +43,7 @@ describe("commands > all", () => {
   it("should identify an object iterable with all values conforming to the test", () => {
     const result = all(
       [{ test: "value1" }, { test: "value2" }, { test: "value3" }],
-      (obj) => obj.test !== "value0"
+      (obj) => obj.test !== "value0",
     );
 
     should(result).equal(true);
@@ -62,7 +62,7 @@ describe("commands > all", () => {
   it("should identify a string iterable with all values that do __not__ conform to the test", () => {
     const result = all(
       ["hello", "world", "how", "are", "you"],
-      (str) => str.length > 6
+      (str) => str.length > 6,
     );
 
     should(result).equal(false);
@@ -75,7 +75,7 @@ describe("commands > all", () => {
         new Date(Date.UTC(2001, 5, 23)),
         new Date(Date.UTC(2022, 9, 15)),
       ],
-      (dt) => dt < new Date(Date.UTC(990, 1, 1))
+      (dt) => dt < new Date(Date.UTC(990, 1, 1)),
     );
 
     should(result).equal(false);
@@ -84,7 +84,7 @@ describe("commands > all", () => {
   it("should identify an object iterable with all values that do __not__ conform to the test", () => {
     const result = all(
       [{ test: "value1" }, { test: "value2" }, { test: "value3" }],
-      (obj) => obj.test !== "value1"
+      (obj) => obj.test !== "value1",
     );
 
     should(result).equal(false);

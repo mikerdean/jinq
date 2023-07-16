@@ -1,7 +1,7 @@
 export default class TakeIterable<T> implements Iterable<T> {
   constructor(
     private readonly iterable: Iterable<T>,
-    private readonly num: number
+    private readonly num: number,
   ) {}
 
   *[Symbol.iterator]() {

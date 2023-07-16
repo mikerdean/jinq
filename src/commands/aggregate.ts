@@ -3,7 +3,7 @@ import type { JinqAccumulator } from "../types.js";
 const aggregate = <T, TAccumulate>(
   iterable: Iterable<T>,
   seed: TAccumulate,
-  accumulator: JinqAccumulator<T, TAccumulate>
+  accumulator: JinqAccumulator<T, TAccumulate>,
 ): TAccumulate => {
   let value: TAccumulate = seed;
 

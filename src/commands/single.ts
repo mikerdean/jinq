@@ -25,7 +25,7 @@ const single = <T>(iterable: Iterable<T>, test: JinqItemTest<T>): T => {
   if (items.length > 1) {
     throw new SingleValueError<T>(
       "more than one item was found in this iterable matching your test",
-      items
+      items,
     );
   }
 
