@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import ExceptIterable from "./except";
+import ExceptIterable from "./except.js";
 
 describe("iterables > except", () => {
   it("should get an exception result of numbers", () => {

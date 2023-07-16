@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import SkipIterable from "./skip";
+import SkipIterable from "./skip.js";
 
 describe("iterables > skip", () => {
   it("should correctly skip an iterable", () => {

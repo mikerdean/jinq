@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import toMap from "./toMap";
+import toMap from "./toMap.js";
 
 describe("commands > toMap", () => {
   it("should convert an array to a map of the appropriate type", () => {

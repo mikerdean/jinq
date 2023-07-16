@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import count from "./count";
+import count from "./count.js";
 
 describe("commands > count", () => {
   it("should return a count of 0 (zero) for an empty iterable", () => {

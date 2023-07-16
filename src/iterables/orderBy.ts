@@ -1,4 +1,4 @@
-import type { Direction, JinqItemSelect } from "../types";
+import type { Direction, JinqItemSelect } from "../types.js";
 
 export default class OrderByIterable<T, U> implements Iterable<T> {
   constructor(

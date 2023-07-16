@@ -1,4 +1,4 @@
-import type { JinqItemTest } from "../types";
+import type { JinqItemTest } from "../types.js";
 
 export default class WhereIterable<T> implements Iterable<T> {
   constructor(

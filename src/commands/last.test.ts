@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import last from "./last";
+import last from "./last.js";
 
 describe("commands > last", () => {
   it("should throw an error for an empty iterable", () => {

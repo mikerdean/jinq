@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import toArray from "./toArray";
+import toArray from "./toArray.js";
 
 describe("commands > toArray", () => {
   it("should create a new array from an array of the appropriate type", () => {

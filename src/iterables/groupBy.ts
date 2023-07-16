@@ -1,4 +1,4 @@
-import type { JinqGroupBy, JinqKeyMap } from "../types";
+import type { JinqGroupBy, JinqKeyMap } from "../types.js";
 
 export default class GroupByIterable<TKey, TValue>
   implements Iterable<JinqGroupBy<TKey, TValue>>

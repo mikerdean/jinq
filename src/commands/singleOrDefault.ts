@@ -1,5 +1,5 @@
-import type { JinqItemTest } from "../types";
-import single, { SingleValueError } from "./single";
+import type { JinqItemTest } from "../types.js";
+import single, { SingleValueError } from "./single.js";
 
 const singleOrDefault = <T>(
   iterable: Iterable<T>,

@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import OrderByIterable from "./orderBy";
+import OrderByIterable from "./orderBy.js";
 
 describe("iterables > orderBy", () => {
   it("should order number values in ascending order correctly", () => {

@@ -6,11 +6,7 @@ const config = defineConfig({
   output: [
     {
       file: "./dist/jinq.js",
-      format: "cjs",
-    },
-    {
-      file: "./dist/jinq.esm.js",
-      format: "es",
+      format: "esm",
     },
   ],
   plugins: [typescript()],

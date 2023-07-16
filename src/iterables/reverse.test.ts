@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import ReverseIterable from "./reverse";
+import ReverseIterable from "./reverse.js";
 
 describe("iterables > reverse", () => {
   it("should correctly reverse an iterable", () => {

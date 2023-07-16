@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import RepeatIterable from "./repeat";
+import RepeatIterable from "./repeat.js";
 
 describe("iterables > repeat", () => {
   it("should correctly repeat an iterable", () => {

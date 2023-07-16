@@ -14,12 +14,13 @@ import {
   toArray,
   toMap,
   toSet,
-} from "./commands";
+} from "./commands/index.js";
 import {
   DistinctIterable,
   ExceptIterable,
   GroupByIterable,
   IntersectIterable,
+  OrderByIterable,
   RepeatIterable,
   ReverseIterable,
   SelectIterable,
@@ -27,8 +28,7 @@ import {
   SkipIterable,
   TakeIterable,
   WhereIterable,
-} from "./iterables";
-import OrderByIterable from "./iterables/orderBy";
+} from "./iterables/index.js";
 import type {
   Direction,
   JinqAccumulator,
@@ -37,7 +37,7 @@ import type {
   JinqItemSelectMany,
   JinqItemTest,
   JinqKeyMap,
-} from "./types";
+} from "./types.js";
 
 export class JinqIterable<T> implements Iterable<T> {
   private iterable: Iterable<T>;
@@ -62,7 +62,7 @@ export class JinqIterable<T> implements Iterable<T> {
   }
 
   contains(item: T): boolean {
-    return any(this.iterable, (value) => Object.is(value, item));
+    return any(this.iterable, (value: T) => Object.is(value, item));
   }
 
   count(test?: JinqItemTest<T>): number {

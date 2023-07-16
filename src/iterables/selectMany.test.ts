@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import SelectManyIterable from "./selectMany";
+import SelectManyIterable from "./selectMany.js";
 
 const getMovies = () => [
   { id: 1, title: "Alien", tags: ["horror", "sci-fi", "alien"] },

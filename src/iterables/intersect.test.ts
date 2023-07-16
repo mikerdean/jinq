@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import IntersectIterable from "./intersect";
+import IntersectIterable from "./intersect.js";
 
 describe("iterables > intersect", () => {
   it("should get an intersection of numbers", () => {

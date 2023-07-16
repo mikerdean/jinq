@@ -1,5 +1,5 @@
 import { describe, it } from "mocha";
-import aggregate from "./aggregate";
+import aggregate from "./aggregate.js";
 import should from "should";
 
 describe("commands > aggregate", () => {

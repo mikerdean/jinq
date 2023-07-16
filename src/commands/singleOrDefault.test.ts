@@ -1,7 +1,7 @@
 import { describe, it } from "mocha";
 import should from "should";
-import { SingleValueError } from "./single";
-import singleOrDefault from "./singleOrDefault";
+import { SingleValueError } from "./single.js";
+import singleOrDefault from "./singleOrDefault.js";
 
 describe("commands > singleOrDefault", () => {
   it("should throw an error when more than one applicable item in the iterable", () => {

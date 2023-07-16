@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import min from "./min";
+import min from "./min.js";
 
 describe("commands > min", () => {
   it("should throw for an iterable with no elements", () => {

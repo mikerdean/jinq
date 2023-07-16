@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import any from "./any";
+import any from "./any.js";
 
 describe("commands > any", () => {
   it("should identify an empty iterable as not conforming to the test", () => {

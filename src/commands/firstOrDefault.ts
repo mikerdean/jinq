@@ -1,5 +1,5 @@
-import type { JinqItemTest } from "../types";
-import first from "./first";
+import type { JinqItemTest } from "../types.js";
+import first from "./first.js";
 
 const firstOrDefault = <T>(
   iterable: Iterable<T>,

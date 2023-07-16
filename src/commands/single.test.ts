@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import single, { SingleValueError } from "./single";
+import single, { SingleValueError } from "./single.js";
 
 describe("commands > single", () => {
   it("should throw an error for an empty iterable", () => {

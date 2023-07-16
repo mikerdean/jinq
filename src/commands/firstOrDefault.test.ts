@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import firstOrDefault from "./firstOrDefault";
+import firstOrDefault from "./firstOrDefault.js";
 
 describe("commands > firstOrDefault", () => {
   it("should return the defaultValue for an empty iterable", () => {

@@ -1,16 +1,20 @@
 {
-  "name": "jinq",
+  "name": "@mikerdean/jinq",
   "version": "1.0.0",
   "description": "A selection of methods for iterables using LINQ as inspiration.",
-  "main": "./dist/jinq.js",
-  "module": "./dist/jinq.esm.js",
+  "exports": "./dist/jinq.js",
   "types": "./dist/types/index.d.ts",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "build": "npm run build:clean && npm run build:rollup && npm run build:declaration",
     "build:clean": "rm -rf ./dist",
     "build:declaration": "tsc --declaration --emitDeclarationOnly --declarationDir ./dist/types",
     "build:rollup": "rollup --config rollup.config.mjs",
     "format:prettier": "prettier --write .",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
     "test": "NODE_NO_WARNINGS=1 mocha",
@@ -50,5 +54,12 @@
   },
   "volta": {
     "node": "18.16.0"
-  }
+  },
+  "files": [
+    "./dist",
+    "./package.json",
+    "./package-lock.json",
+    "./LICENSE",
+    "./readme.md"
+  ]
 }

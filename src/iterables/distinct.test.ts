@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import DistinctIterable from "./distinct";
+import DistinctIterable from "./distinct.js";
 
 describe("iterables > distinct", () => {
   it("should get a distinct result of numbers", () => {

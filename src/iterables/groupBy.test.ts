@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import GroupByIterable from "./groupBy";
+import GroupByIterable from "./groupBy.js";
 
 describe("iterables > groupBy", () => {
   it("should correctly group an iterable by string key", () => {

@@ -1,4 +1,4 @@
-import type { JinqItemSelectMany } from "../types";
+import type { JinqItemSelectMany } from "../types.js";
 
 export default class SelectIterable<T, U> implements Iterable<U> {
   constructor(

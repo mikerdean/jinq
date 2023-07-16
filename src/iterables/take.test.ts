@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import TakeIterable from "./take";
+import TakeIterable from "./take.js";
 
 describe("iterables > take", () => {
   it("should correctly take an iterable", () => {

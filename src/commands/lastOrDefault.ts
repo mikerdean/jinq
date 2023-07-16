@@ -1,5 +1,5 @@
-import type { JinqItemTest } from "../types";
-import last from "./last";
+import type { JinqItemTest } from "../types.js";
+import last from "./last.js";
 
 const lastOrDefault = <T>(
   iterable: Iterable<T>,

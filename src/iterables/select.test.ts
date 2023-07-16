@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import SelectIterable from "./select";
+import SelectIterable from "./select.js";
 
 const getActors = () => [
   { id: 1, forenames: "Arnold", surname: "Schwarzenegger" },

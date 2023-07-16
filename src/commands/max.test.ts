@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import max from "./max";
+import max from "./max.js";
 
 describe("commands > max", () => {
   it("should throw for an iterable with no elements", () => {

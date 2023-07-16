@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import WhereIterable from "./where";
+import WhereIterable from "./where.js";
 
 describe("iterables > where", () => {
   it("should correctly filter a iterable", () => {

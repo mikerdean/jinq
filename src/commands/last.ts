@@ -1,5 +1,5 @@
-import { ReverseIterable } from "../iterables";
-import type { JinqItemTest } from "../types";
+import { ReverseIterable } from "../iterables/index.js";
+import type { JinqItemTest } from "../types.js";
 
 const last = <T>(iterable: Iterable<T>, test: JinqItemTest<T>): T => {
   const reversed = new ReverseIterable(iterable);

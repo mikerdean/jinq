@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import should from "should";
-import toSet from "./toSet";
+import toSet from "./toSet.js";
 
 describe("commands > toSet", () => {
   it("should convert a set to a new set of the appropriate type", () => {

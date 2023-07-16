@@ -1,4 +1,4 @@
-import type { JinqAccumulator } from "../types";
+import type { JinqAccumulator } from "../types.js";
 
 const aggregate = <T, TAccumulate>(
   iterable: Iterable<T>,

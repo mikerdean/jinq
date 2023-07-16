@@ -1,4 +1,4 @@
-import type { JinqItemTest } from "../types";
+import type { JinqItemTest } from "../types.js";
 
 export class SingleValueError<T> extends Error {
   readonly items: T[];
