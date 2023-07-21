@@ -255,8 +255,15 @@ describe("jinq class", () => {
 
   it("should append an item to the end of an iterable", () => {
     const input = ["a", "b", "c"];
-    const query = new JinqIterable(input).concat(["oh noes"]);
+    const query = new JinqIterable(input).append("oh noes");
     const result = [...query];
     should(result).deepEqual(["a", "b", "c", "oh noes"]);
+  });
+
+  it("should prepend an item to the beginning of an iterable", () => {
+    const input = ["a", "b", "c"];
+    const query = new JinqIterable(input).prepend("z");
+    const result = [...query];
+    should(result).deepEqual(["z", "a", "b", "c"]);
   });
 });

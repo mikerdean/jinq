@@ -24,6 +24,7 @@ import {
   GroupByIterable,
   IntersectIterable,
   OrderByIterable,
+  PrependIterable,
   RepeatIterable,
   ReverseIterable,
   SelectIterable,
@@ -133,6 +134,11 @@ export class JinqIterable<T> implements Iterable<T> {
 
   orderBy<U>(select: JinqItemSelect<T, U>, direction: Direction = "asc") {
     this.iterable = new OrderByIterable(this.iterable, select, direction);
+    return this;
+  }
+
+  prepend(item: T): JinqIterable<T> {
+    this.iterable = new PrependIterable(this.iterable, item);
     return this;
   }
 

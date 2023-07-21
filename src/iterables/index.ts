@@ -5,6 +5,7 @@ export { default as ExceptIterable } from "./except.js";
 export { default as GroupByIterable } from "./groupBy.js";
 export { default as IntersectIterable } from "./intersect.js";
 export { default as OrderByIterable } from "./orderBy.js";
+export { default as PrependIterable } from "./prepend.js";
 export { default as RepeatIterable } from "./repeat.js";
 export { default as ReverseIterable } from "./reverse.js";
 export { default as SelectIterable } from "./select.js";
