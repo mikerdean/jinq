@@ -2,7 +2,7 @@ import { describe, it } from "mocha";
 import should from "should";
 import ConcatIterable from "./concat.js";
 
-describe("iterables > distinct", () => {
+describe("iterables > concat", () => {
   it("should append two iterables together successfully", () => {
     const query = new ConcatIterable([
       [1, 2, 3, 4, 5],
