@@ -266,4 +266,11 @@ describe("jinq class", () => {
     const result = [...query];
     should(result).deepEqual(["z", "a", "b", "c"]);
   });
+
+  it("should union two iterables successfully", () => {
+    const input = ["a", "b", "c"];
+    const query = new JinqIterable(input).union(["a", "b", "c", "d", "e", "f"]);
+    const result = [...query];
+    should(result).deepEqual(["a", "b", "c", "d", "e", "f"]);
+  });
 });

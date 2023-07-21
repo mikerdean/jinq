@@ -12,4 +12,5 @@ export { default as SelectIterable } from "./select.js";
 export { default as SelectManyIterable } from "./selectMany.js";
 export { default as SkipIterable } from "./skip.js";
 export { default as TakeIterable } from "./take.js";
+export { default as UnionIterable } from "./union.js";
 export { default as WhereIterable } from "./where.js";

@@ -31,6 +31,7 @@ import {
   SelectManyIterable,
   SkipIterable,
   TakeIterable,
+  UnionIterable,
   WhereIterable,
 } from "./iterables/index.js";
 import type {
@@ -188,6 +189,11 @@ export class JinqIterable<T> implements Iterable<T> {
 
   toSet(): Set<T> {
     return toSet(this.iterable);
+  }
+
+  union(items: Iterable<T>): JinqIterable<T> {
+    this.iterable = new UnionIterable([this.iterable, items]);
+    return this;
   }
 
   where(test: JinqItemTest<T>): JinqIterable<T> {
