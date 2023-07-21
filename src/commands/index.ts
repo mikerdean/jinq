@@ -2,6 +2,7 @@ export { default as aggregate } from "./aggregate.js";
 export { default as all } from "./all.js";
 export { default as any } from "./any.js";
 export { default as count } from "./count.js";
+export { default as elementAt } from "./elementAt.js";
 export { default as first } from "./first.js";
 export { default as firstOrDefault } from "./firstOrDefault.js";
 export { default as last } from "./last.js";

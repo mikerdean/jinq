@@ -214,37 +214,35 @@ describe("jinq class", () => {
 
   it("should filter by distinct values", () => {
     const input = [1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5];
-
     const query = new JinqIterable(input).distinct();
-
     const result = [...query];
     should(result).deepEqual([1, 2, 3, 4, 5]);
   });
 
   it("should filter by distinct values with multiple operators", () => {
     const input = [1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5];
-
     const query = new JinqIterable(input).distinct().where((x) => x > 3);
-
     const result = [...query];
     should(result).deepEqual([4, 5]);
   });
 
   it("should intersect with other values", () => {
     const input = [1, 2, 3, 4, 5];
-
     const query = new JinqIterable(input).intersect([1, 2, 3]);
-
     const result = [...query];
     should(result).deepEqual([1, 2, 3]);
   });
 
   it("should produce an exception of values", () => {
     const input = [1, 2, 3, 4, 5];
-
     const query = new JinqIterable(input).except([4, 5]);
-
     const result = [...query];
     should(result).deepEqual([1, 2, 3]);
+  });
+
+  it("should get an element at the supplied index", () => {
+    const input = [1, 2, 3, 4, 5];
+    const result = new JinqIterable(input).elementAt(3);
+    should(result).equal(4);
   });
 });

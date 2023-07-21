@@ -3,6 +3,7 @@ import {
   all,
   any,
   count,
+  elementAt,
   first,
   firstOrDefault,
   last,
@@ -72,6 +73,10 @@ export class JinqIterable<T> implements Iterable<T> {
   distinct(): JinqIterable<T> {
     this.iterable = new DistinctIterable<T>(this.iterable);
     return this;
+  }
+
+  elementAt(index: number): T {
+    return elementAt(this.iterable, index);
   }
 
   except(compareTo: Iterable<T>): JinqIterable<T> {
