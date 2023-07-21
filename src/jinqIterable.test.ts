@@ -245,4 +245,11 @@ describe("jinq class", () => {
     const result = new JinqIterable(input).elementAt(3);
     should(result).equal(4);
   });
+
+  it("should concatenate two iterables together", () => {
+    const input = [1, 2, 3, 4, 5];
+    const query = new JinqIterable(input).concat([6, 9, 12, 15, 21]);
+    const result = [...query];
+    should(result).deepEqual([1, 2, 3, 4, 5, 6, 9, 12, 15, 21]);
+  });
 });

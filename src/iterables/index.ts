@@ -1,3 +1,4 @@
+export { default as ConactIterable } from "./concat.js";
 export { default as DistinctIterable } from "./distinct.js";
 export { default as ExceptIterable } from "./except.js";
 export { default as GroupByIterable } from "./groupBy.js";

@@ -1,3 +1,4 @@
+import ConcatIterable from "iterables/concat.js";
 import {
   aggregate,
   all,
@@ -60,6 +61,11 @@ export class JinqIterable<T> implements Iterable<T> {
 
   any(test: JinqItemTest<T>): boolean {
     return any(this.iterable, test);
+  }
+
+  concat(items: Iterable<T>): JinqIterable<T> {
+    this.iterable = new ConcatIterable([this.iterable, items]);
+    return this;
   }
 
   contains(item: T): boolean {
