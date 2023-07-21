@@ -18,6 +18,7 @@ import {
   toSet,
 } from "./commands/index.js";
 import {
+  AppendIterable,
   DistinctIterable,
   ExceptIterable,
   GroupByIterable,
@@ -61,6 +62,11 @@ export class JinqIterable<T> implements Iterable<T> {
 
   any(test: JinqItemTest<T>): boolean {
     return any(this.iterable, test);
+  }
+
+  append(item: T): JinqIterable<T> {
+    this.iterable = new AppendIterable(this.iterable, item);
+    return this;
   }
 
   concat(items: Iterable<T>): JinqIterable<T> {

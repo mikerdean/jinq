@@ -1,3 +1,4 @@
+export { default as AppendIterable } from "./append.js";
 export { default as ConactIterable } from "./concat.js";
 export { default as DistinctIterable } from "./distinct.js";
 export { default as ExceptIterable } from "./except.js";

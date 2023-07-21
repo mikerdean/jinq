@@ -252,4 +252,11 @@ describe("jinq class", () => {
     const result = [...query];
     should(result).deepEqual([1, 2, 3, 4, 5, 6, 9, 12, 15, 21]);
   });
+
+  it("should append an item to the end of an iterable", () => {
+    const input = ["a", "b", "c"];
+    const query = new JinqIterable(input).concat(["oh noes"]);
+    const result = [...query];
+    should(result).deepEqual(["a", "b", "c", "oh noes"]);
+  });
 });
