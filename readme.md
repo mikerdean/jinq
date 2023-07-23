@@ -250,3 +250,23 @@ console.log(result2); // 2
 console.log(result3); // 75
 console.log(result4); // 100
 ```
+
+#### `max(): T`
+
+This method iterates through the current iterable and returns the "maximum" value from the iterable based on a basic `>` comparison.
+
+```javascript
+const result = jinq([3, 2, 5, 1, 4]).max();
+
+console.log(result); // 5
+```
+
+#### `min(): T`
+
+This method iterates through the current iterable and returns the "minimum" value from the iterable based on a basic `<` comparison.
+
+```javascript
+const result = jinq([3, 2, 5, 1, 4]).max();
+
+console.log(result); // 1
+```
