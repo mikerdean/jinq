@@ -1,8 +1,10 @@
 import type { JinqItemTest } from "../types.js";
 
-const first = <T>(iterable: Iterable<T>, test: JinqItemTest<T>): T => {
+const first = <T>(iterable: Iterable<T>, test?: JinqItemTest<T>): T => {
   for (const item of iterable) {
-    if (test(item)) {
+    if (!test) {
+      return item;
+    } else if (test(item)) {
       return item;
     }
   }

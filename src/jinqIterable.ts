@@ -98,7 +98,7 @@ export class JinqIterable<T> implements Iterable<T> {
     return this;
   }
 
-  first(test: JinqItemTest<T>): T {
+  first(test?: JinqItemTest<T>): T {
     return first(this.iterable, test);
   }
 

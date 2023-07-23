@@ -121,3 +121,41 @@ const result = jinq([1, 1, 3, 4, 2, 2, 2, 5, 5, 5, 1]).distinct();
 
 console.log([...result]); // [1, 3, 4, 2, 5]
 ```
+
+#### `elementAt(index: number): T`
+
+This method iterates through the current iterable and returns a single element at the provided index. This method will `throw` if you request an index that does not exist.
+
+```javascript
+const result = jinq([1, 2, 3, 4, 5]).elementAt(2);
+
+console.log(result); // 3
+```
+
+#### `except(compareTo: Iterable<T>): JinqIterable<T>`
+
+This method iterates through the current iterable and returns elements in your current iterable that **do not** appear in `compareTo`.
+
+```javascript
+const result = jinq(["healthy", "bears", "are", "extremely", "rare"]).except([
+  "healthy",
+  "bears",
+  "are",
+  "super",
+  "cool",
+]);
+
+console.log([...result]); // ["extremely", "rare"];
+```
+
+#### `first(test?: (item: T) => boolean): T`
+
+This method iterates through the current iterable and returns a the first element in your iterable. Optionally, you may supply a test to count only the elements that return `true` from the test.
+
+```javascript
+const result = jinq([1, 2, 3, 4, 5]).first();
+const result2 = jinq([1, 2, 3, 4, 5]).first((x) => x > 3);
+
+console.log(result); // 1
+console.log(result2); // 4
+```

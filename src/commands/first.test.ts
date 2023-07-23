@@ -3,7 +3,15 @@ import should from "should";
 import first from "./first.js";
 
 describe("commands > first", () => {
-  it("should throw an error for an empty iterable", () => {
+  it("should throw an error for an empty iterable with no test", () => {
+    should.throws(
+      () => first([]),
+      Error,
+      "item could not be found in iterable",
+    );
+  });
+
+  it("should throw an error for an empty iterable with a test", () => {
     should.throws(
       () => first([], () => true),
       Error,
@@ -17,6 +25,11 @@ describe("commands > first", () => {
       Error,
       "item could not be found in iterable",
     );
+  });
+
+  it("should return the first value of the iterable if no test is supplied", () => {
+    const result = first([1, 2, 3]);
+    should(result).equal(1);
   });
 
   it("should return the first value of a number iterable which conforms to the test", () => {
