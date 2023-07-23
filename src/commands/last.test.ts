@@ -4,6 +4,10 @@ import last from "./last.js";
 
 describe("commands > last", () => {
   it("should throw an error for an empty iterable", () => {
+    should.throws(() => last([]), Error, "item could not be found in iterable");
+  });
+
+  it("should throw an error for an empty iterable with a supplied test", () => {
     should.throws(
       () => last([], () => true),
       Error,

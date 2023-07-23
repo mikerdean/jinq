@@ -4,35 +4,40 @@ import lastOrDefault from "./lastOrDefault.js";
 
 describe("commands > lastOrDefault", () => {
   it("should return the defaultValue for an empty iterable", () => {
-    const result = lastOrDefault<number>([], (num) => num > 1, 25);
+    const result = lastOrDefault<number>([], 25);
+    should(result).equal(25);
+  });
+
+  it("should return the defaultValue for an empty iterable with the supplied test", () => {
+    const result = lastOrDefault<number>([], 25, (num) => num > 1);
     should(result).equal(25);
   });
 
   it("should return the last value of a number iterable which conforms to the test", () => {
-    const result = lastOrDefault([1, 2, 3], (num) => num < 3, 5);
+    const result = lastOrDefault([1, 2, 3], 5, (num) => num < 3);
     should(result).equal(2);
   });
 
   it("should return the defaultValue when it cannot find an applicable item in a number iterable", () => {
-    const result = lastOrDefault([1, 2, 3], (num) => num > 4, 0);
+    const result = lastOrDefault([1, 2, 3], 0, (num) => num > 4);
     should(result).equal(0);
   });
 
   it("should return the last value of a boolean iterable which conforms to the test", () => {
-    const result = lastOrDefault([false, true, false], (bool) => bool, false);
+    const result = lastOrDefault([false, true, false], false, (bool) => bool);
     should(result).equal(true);
   });
 
   it("should return the defaultValue when it cannot find an applicable item in a boolean iterable", () => {
-    const result = lastOrDefault([true, true, true], (bool) => !bool, false);
+    const result = lastOrDefault([true, true, true], false, (bool) => !bool);
     should(result).equal(false);
   });
 
   it("should return the last value of a string iterable which conforms to the test", () => {
     const result = lastOrDefault(
       ["hello", "world", "dork", "mucus"],
-      (str) => str.length < 5,
       "something",
+      (str) => str.length < 5,
     );
 
     should(result).equal("dork");
@@ -41,8 +46,8 @@ describe("commands > lastOrDefault", () => {
   it("should return the defaultValue when it cannot find an applicable item in a string iterable", () => {
     const result = lastOrDefault(
       ["hello", "world", "dork"],
-      (str) => str.length > 6,
       "a cool result",
+      (str) => str.length > 6,
     );
 
     should(result).equal("a cool result");
@@ -55,8 +60,8 @@ describe("commands > lastOrDefault", () => {
         new Date(Date.UTC(2001, 5, 23)),
         new Date(Date.UTC(2022, 9, 15)),
       ],
-      (dt) => dt > new Date(Date.UTC(2000, 1, 1)),
       new Date(Date.UTC(1900, 0, 1)),
+      (dt) => dt > new Date(Date.UTC(2000, 1, 1)),
     );
 
     should(result.toISOString()).equal("2022-10-15T00:00:00.000Z");
@@ -69,8 +74,8 @@ describe("commands > lastOrDefault", () => {
         new Date(Date.UTC(2001, 5, 23)),
         new Date(Date.UTC(2022, 9, 15)),
       ],
-      (dt) => dt < new Date(Date.UTC(1990, 0, 1)),
       new Date(Date.UTC(1900, 0, 1)),
+      (dt) => dt < new Date(Date.UTC(1990, 0, 1)),
     );
 
     should(result.toISOString()).equal("1900-01-01T00:00:00.000Z");
@@ -84,8 +89,8 @@ describe("commands > lastOrDefault", () => {
 
     const result = lastOrDefault(
       [obj1, obj2, obj3],
-      (obj) => obj.test === "value2",
       obj4,
+      (obj) => obj.test === "value2",
     );
 
     should(result).equal(obj2);
@@ -99,8 +104,8 @@ describe("commands > lastOrDefault", () => {
 
     const result = lastOrDefault(
       [obj1, obj2, obj3],
-      (obj) => obj.test === "value0",
       obj4,
+      (obj) => obj.test === "value0",
     );
 
     should(result).equal(obj4);

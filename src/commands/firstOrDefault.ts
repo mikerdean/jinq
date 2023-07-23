@@ -1,16 +1,19 @@
 import type { JinqItemTest } from "../types.js";
-import first from "./first.js";
 
 const firstOrDefault = <T>(
   iterable: Iterable<T>,
   defaultValue: T,
   test?: JinqItemTest<T>,
 ): T => {
-  try {
-    return first(iterable, test);
-  } catch (e) {
-    return defaultValue;
+  for (const item of iterable) {
+    if (!test) {
+      return item;
+    } else if (test(item)) {
+      return item;
+    }
   }
+
+  return defaultValue;
 };
 
 export default firstOrDefault;

@@ -198,11 +198,11 @@ console.log([...result]); /* [
   { key: "FPS", values: [
     { id: 1, name: "DooM", type: "FPS" },
     { id: 2, name: "Blake Stone", type: "FPS" },
-  ],
+  ]},
   { key: "RTS", values: [
     { id: 3, name: "Command and Conquer", type: "RTS" },
     { id: 6, name: "Total Annihilation", type: "RTS" },
-  ] },
+  ]},
   { key: "Management", values: [
     { id: 4, name: "Theme Hospital", type: "Management" },
     { id: 5, name: "Theme Park", type: "Management" },
@@ -219,4 +219,34 @@ This method iterates through the current iterable and returns elements that appe
 const result = jinq([1, 2, 3, 4, 5]).intersect([4, 5, 6, 7, 8]);
 
 console.log([...result]); // [4, 5];
+```
+
+#### `last(test?: (item: T) => boolean): T`
+
+This method iterates through the current iterable and returns the last element in your iterable. Optionally, you may supply a test to include only the elements that return `true` from the test.
+
+```javascript
+const result = jinq([1, 2, 3, 4, 5]).last();
+const result2 = jinq([1, 2, 3, 4, 5]).last((x) => x < 3);
+
+console.log(result); // 5
+console.log(result2); // 2
+```
+
+#### `lastOrDefault(defaultValue: T, test?: (item: T) => boolean): T`
+
+This method iterates through the current iterable and returns the last element in your iterable. Optionally, you may supply a test to include only the elements that return `true` from the test.
+
+If the query does not find any values, it will return the `defaultValue` you supply.
+
+```javascript
+const result = jinq([1, 2, 3, 4, 5]).lastOrDefault(25);
+const result2 = jinq([1, 2, 3, 4, 5]).lastOrDefault(50, (x) => x < 3);
+const result3 = jinq([]).lastOrDefault(75);
+const result2 = jinq([1, 2, 3, 4, 5]).lastOrDefault(100, (x) => x > 5);
+
+console.log(result); // 5
+console.log(result2); // 2
+console.log(result3); // 75
+console.log(result4); // 100
 ```

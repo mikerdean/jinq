@@ -117,12 +117,12 @@ export class JinqIterable<T> implements Iterable<T> {
     return this;
   }
 
-  last(test: JinqItemTest<T>): T {
+  last(test?: JinqItemTest<T>): T {
     return last(this.iterable, test);
   }
 
-  lastOrDefault(test: JinqItemTest<T>, defaultValue: T): T {
-    return lastOrDefault(this.iterable, test, defaultValue);
+  lastOrDefault(defaultValue: T, test?: JinqItemTest<T>): T {
+    return lastOrDefault(this.iterable, defaultValue, test);
   }
 
   max(): T {
