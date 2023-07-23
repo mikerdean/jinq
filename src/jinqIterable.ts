@@ -102,8 +102,8 @@ export class JinqIterable<T> implements Iterable<T> {
     return first(this.iterable, test);
   }
 
-  firstOrDefault(test: JinqItemTest<T>, defaultValue: T): T {
-    return firstOrDefault(this.iterable, test, defaultValue);
+  firstOrDefault(defaultValue: T, test?: JinqItemTest<T>): T {
+    return firstOrDefault(this.iterable, defaultValue, test);
   }
 
   intersect(compareTo: Iterable<T>): JinqIterable<T> {
