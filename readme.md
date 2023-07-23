@@ -178,6 +178,39 @@ console.log(result3); // 75
 console.log(result4); // 100
 ```
 
+#### `groupBy<TKey>(key: (item: TValue) => TKey): JinqIterable<JinqGroupBy<TKey, T>>`
+
+This method iterates through the current iterable and returns elements grouped together by the result of the supplied `key`.
+
+```javascript
+const gamedata = [
+  { id: 1, name: "DooM", type: "FPS" },
+  { id: 2, name: "Blake Stone", type: "FPS" },
+  { id: 3, name: "Command and Conquer", type: "RTS" },
+  { id: 4, name: "Theme Hospital", type: "Management" },
+  { id: 5, name: "Theme Park", type: "Management" },
+  { id: 6, name: "Total Annihilation", type: "RTS" },
+];
+
+const result = jinq(gamedata).groupBy((game) => game.type);
+
+console.log([...result]); /* [
+  { key: "FPS", values: [
+    { id: 1, name: "DooM", type: "FPS" },
+    { id: 2, name: "Blake Stone", type: "FPS" },
+  ],
+  { key: "RTS", values: [
+    { id: 3, name: "Command and Conquer", type: "RTS" },
+    { id: 6, name: "Total Annihilation", type: "RTS" },
+  ] },
+  { key: "Management", values: [
+    { id: 4, name: "Theme Hospital", type: "Management" },
+    { id: 5, name: "Theme Park", type: "Management" },
+  ]},
+]
+*/
+```
+
 #### `intersect(compareTo: Iterable<T>): JinqIterable<T>`
 
 This method iterates through the current iterable and returns elements that appear in both your current iterable and `compareTo`.

@@ -106,15 +106,15 @@ export class JinqIterable<T> implements Iterable<T> {
     return firstOrDefault(this.iterable, defaultValue, test);
   }
 
-  intersect(compareTo: Iterable<T>): JinqIterable<T> {
-    this.iterable = new IntersectIterable(this.iterable, compareTo);
-    return this;
-  }
-
   groupBy<TKey>(key: JinqKeyMap<TKey, T>): JinqIterable<JinqGroupBy<TKey, T>> {
     return new JinqIterable<JinqGroupBy<TKey, T>>(
       new GroupByIterable<TKey, T>(this.iterable, key),
     );
+  }
+
+  intersect(compareTo: Iterable<T>): JinqIterable<T> {
+    this.iterable = new IntersectIterable(this.iterable, compareTo);
+    return this;
   }
 
   last(test: JinqItemTest<T>): T {
