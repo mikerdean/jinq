@@ -150,7 +150,7 @@ console.log([...result]); // ["extremely", "rare"];
 
 #### `first(test?: (item: T) => boolean): T`
 
-This method iterates through the current iterable and returns a the first element in your iterable. Optionally, you may supply a test to count only the elements that return `true` from the test.
+This method iterates through the current iterable and returns the first element in your iterable. Optionally, you may supply a test to include only the elements that return `true` from the test.
 
 ```javascript
 const result = jinq([1, 2, 3, 4, 5]).first();
@@ -158,4 +158,32 @@ const result2 = jinq([1, 2, 3, 4, 5]).first((x) => x > 3);
 
 console.log(result); // 1
 console.log(result2); // 4
+```
+
+#### `firstOrDefault(defaultValue: T, test?: (item: T) => boolean): T`
+
+This method iterates through the current iterable and returns the first element in your iterable. Optionally, you may supply a test to include only the elements that return `true` from the test.
+
+If the query does not find any values, it will return the `defaultValue` you supply.
+
+```javascript
+const result = jinq([1, 2, 3, 4, 5]).firstOrDefault(25);
+const result2 = jinq([1, 2, 3, 4, 5]).firstOrDefault(50, (x) => x > 3);
+const result3 = jinq([]).firstOrDefault(75);
+const result2 = jinq([1, 2, 3, 4, 5]).firstOrDefault(100, (x) => x > 5);
+
+console.log(result); // 1
+console.log(result2); // 4
+console.log(result3); // 75
+console.log(result4); // 100
+```
+
+#### `intersect(compareTo: Iterable<T>): JinqIterable<T>`
+
+This method iterates through the current iterable and returns elements that appear in both your current iterable and `compareTo`.
+
+```javascript
+const result = jinq([1, 2, 3, 4, 5]).intersect([4, 5, 6, 7, 8]);
+
+console.log([...result]); // [4, 5];
 ```
